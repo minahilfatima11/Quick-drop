@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../utils/conts/colors.dart';
+
 class OrderUIDSection extends StatelessWidget {
   final String orderUID;
   final String status;
@@ -19,6 +21,7 @@ class OrderUIDSection extends StatelessWidget {
         Text(
           'Order UID Number\n$orderUID',
           style: TextStyle(
+            color: AppColors.appOrange,
             fontSize: 15.sp,
             fontWeight: FontWeight.bold,
           ),
@@ -26,7 +29,7 @@ class OrderUIDSection extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
           decoration: BoxDecoration(
-            color: Colors.orange,
+            color: AppColors.appOrange,
             borderRadius: BorderRadius.circular(8.r),
           ),
           child: Text(

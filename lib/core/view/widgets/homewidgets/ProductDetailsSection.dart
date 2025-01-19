@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../utils/conts/colors.dart';
+
 class ProductDetailsSection extends StatefulWidget {
   final String productImage;
   final String productName;
@@ -47,17 +49,17 @@ class _ProductDetailsSectionState extends State<ProductDetailsSection> {
           children: [
             Text(
               widget.productName,
-              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold , color: AppColors.appOrange),
             ),
             SizedBox(height: 8.h),
             Text(
               "${widget.orderDate},${widget.orderTime}",
-              style: TextStyle(fontSize: 14.sp, color: Colors.grey),
+              style: TextStyle(fontSize: 14.sp, color: AppColors.appOrange.withOpacity(0.7)),
             ),
           ],
         ),
         const Spacer(),
-        Icon(Icons.arrow_forward_ios, color: Colors.black54),
+        Icon(Icons.arrow_forward_ios, color: AppColors.appOrange,),
       ],
     );
   }

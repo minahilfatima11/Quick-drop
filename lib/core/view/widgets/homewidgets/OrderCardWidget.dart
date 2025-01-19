@@ -4,6 +4,8 @@ import 'package:zipline_project/core/view/widgets/homewidgets/OrderUIDSectionWid
 import 'package:zipline_project/core/view/widgets/homewidgets/ProductDetailsSection.dart';
 import 'package:zipline_project/core/view/widgets/homewidgets/SenderReceiverSection.dart';
 
+import '../../../utils/conts/colors.dart';
+
 class OrderCard extends StatelessWidget {
   final String orderUID;
   final String status;
@@ -36,7 +38,7 @@ class OrderCard extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Card(
-          color: Colors.pink[50],
+          color: AppColors.appOrange.withOpacity(0.2),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.r),
           ),

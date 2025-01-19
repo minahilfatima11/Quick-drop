@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../utils/conts/colors.dart';
+
 class ServiceCard extends StatelessWidget {
   final String title;
   final String iconPath;
@@ -16,7 +18,7 @@ class ServiceCard extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Colors.pink[50],
+              color: AppColors.appOrange.withOpacity(0.2),
               borderRadius: BorderRadius.circular(8.r), // Responsive border radius
             ),
             width: 100.w, // Responsive width

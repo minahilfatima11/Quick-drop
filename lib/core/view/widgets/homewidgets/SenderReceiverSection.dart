@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/conts/colors.dart';
+
 class SenderReceiverSection extends StatelessWidget {
   final String senderName;
   final String receiverName;
@@ -18,26 +20,26 @@ class SenderReceiverSection extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               'Sender Name',
-              style: TextStyle(fontSize: 14, color: Colors.grey),
+              style: TextStyle(fontSize: 14,  color: AppColors.appOrange.withOpacity(0.7)),
             ),
             Text(
               senderName,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style:  TextStyle(fontSize: 16, fontWeight: FontWeight.bold , color: AppColors.appOrange),
             ),
           ],
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+             Text(
               'Receiver Name',
-              style: TextStyle(fontSize: 14, color: Colors.grey),
+              style: TextStyle(fontSize: 14, color: AppColors.appOrange.withOpacity(0.7)),
             ),
             Text(
               receiverName,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style:  TextStyle(fontSize: 16, fontWeight: FontWeight.bold , color: AppColors.appOrange),
             ),
           ],
         ),
