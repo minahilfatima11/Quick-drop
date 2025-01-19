@@ -30,6 +30,7 @@ class _LoginscreenState extends State<Loginscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) async {
@@ -70,11 +71,14 @@ class _LoginscreenState extends State<Loginscreen> {
                           style: TextStyle(
                             fontSize: 18.sp,
                             fontWeight: FontWeight.w800,
+                            color: Color(0xFFB084FF),
                           ),
                         ),
+                        SizedBox(height: 10,),
                         Text(
-                          "Welcome to ZipLinez",
+                          "Welcome to QuickDrop",
                           style: TextStyle(
+                            color: Color(0xFFB084FF),
                             fontSize: 16.sp,
                           ),
                         ),
@@ -115,7 +119,7 @@ class _LoginscreenState extends State<Loginscreen> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TextButton(
-                            onPressed: () {}, child: Text("Forget password")),
+                            onPressed: () {}, child: Text("Forget password", style: TextStyle(color: Color(0xFFB084FF),),)),
                       ],
                     ),
                     (state is AuthLoading)
@@ -139,7 +143,7 @@ class _LoginscreenState extends State<Loginscreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Don't have account ?"),
+                        Text("Don't have account ?",style: TextStyle(color: Color(0xFFB084FF),),),
                         TextButton(
                             onPressed: () {
                               Navigator.push(
@@ -148,7 +152,7 @@ class _LoginscreenState extends State<Loginscreen> {
                                     builder: (context) => RegisterScreen(),
                                   ));
                             },
-                            child: Text('Register now')),
+                            child: Text('Register now',style: TextStyle(color: Color(0xFFB084FF),),)),
                       ],
                     )
                   ],

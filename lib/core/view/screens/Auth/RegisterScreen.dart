@@ -110,7 +110,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Text(
                       'Register New Account',
                       style: TextStyle(
-                        color: Colors.black,
+                        color: Color(0xFFB084FF),
                         fontWeight: FontWeight.bold,
                         fontSize: 20.sp,
                       ),

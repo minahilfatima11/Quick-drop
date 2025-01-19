@@ -51,7 +51,7 @@ class StepperScreenTextField extends StatelessWidget {
       obscureText: obscureText,
       readOnly: isReadable,
       decoration: InputDecoration(
-        labelStyle: TextStyle(color: labelColor ?? Colors.red),
+        labelStyle: TextStyle(color: labelColor ?? Color(0xFF2F8392)),
         hintText: hint,
         hintStyle: TextStyle(color: hintColor ?? Colors.grey),
         prefixIcon: image != null
@@ -68,13 +68,13 @@ class StepperScreenTextField extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(
-            color: borderColor ?? Colors.redAccent.withOpacity(0.2),
+            color: borderColor ?? Color(0xFF2F8392).withOpacity(0.2),
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(
-            color: borderColor ?? Colors.red.withOpacity(0.2),
+            color: borderColor ?? Color(0xFF2F8392).withOpacity(0.2),
           ),
         ),
       ),
