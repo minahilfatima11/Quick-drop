@@ -99,13 +99,13 @@ class _HomePageState extends State<HomePage> {
                         Text(
                           'Hello !,',
                           style: TextStyle(
-                            color: Color(0xFFB084FF),
+                            color: AppColors.appOrange,
                           ),
                         ),
                         Text(
                           'Welcome Back!',
                           style: TextStyle(
-                            color: Color(0xFFB084FF),
+                            color: AppColors.appOrange,
                             fontSize: 16.sp,
                           ),
                         ),
@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                   Text(
                     'Services',
                     style: TextStyle(
-                      color: Color(0xFFB084FF),
+                      color: AppColors.appOrange,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
                     ),
@@ -172,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'Recent Shipping',
                         style: TextStyle(
-                          color: Color(0xFFB084FF),
+                          color: AppColors.appOrange,
                           fontSize: 20.sp,
                           fontWeight: FontWeight.bold,
                         ),

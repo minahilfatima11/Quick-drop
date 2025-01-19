@@ -21,7 +21,7 @@ class TrackPackagesCard extends StatelessWidget {
             Text(
               'Track Packages 📦',
               style: TextStyle(
-                color: Color(0xFFB084FF),
+                 color: AppColors.appOrange,
                 fontSize: 18.sp,
                 fontWeight: FontWeight.bold,
               ),
