@@ -29,15 +29,15 @@ class _SenderDetailsPageState extends State<SenderDetailsPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController addressController = TextEditingController();
   Country selectedCountry = Country(
-    phoneCode: "91",
-    countryCode: "IN",
+    phoneCode: "92", // Pakistan ka phone code
+    countryCode: "PK", // Pakistan ka country code
     e164Sc: 0,
     geographic: true,
     level: 1,
-    name: "India",
-    example: "India",
-    displayName: "India",
-    displayNameNoCountryCode: "IN",
+    name: "Pakistan", // Country name
+    example: "Pakistan", // Example name
+    displayName: "Pakistan", // Display name
+    displayNameNoCountryCode: "PK", // Display name without country code
     e164Key: "",
   );
   bool validateEmail(String email) {
