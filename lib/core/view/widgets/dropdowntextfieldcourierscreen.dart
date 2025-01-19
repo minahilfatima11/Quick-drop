@@ -24,11 +24,11 @@ class DropdownTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: BorderSide(color: Colors.redAccent.withOpacity(0.2)),
+            borderSide: BorderSide(color: Color(0xFF2F8392).withOpacity(0.2)),
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
-            borderSide: BorderSide(color: Colors.redAccent.withOpacity(0.2)),
+            borderSide: BorderSide(color: Color(0xFF2F8392).withOpacity(0.2)),
           ),
           prefixIcon: Icon(prefixIcon, color: Colors.grey),
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zipline_project/core/utils/conts/colors.dart';
 import 'package:zipline_project/core/view/screens/TabsScreen/all_items.dart';
 import 'package:zipline_project/core/view/widgets/homewidgets/allOrder/all_items_search.dart';
 
@@ -7,7 +8,7 @@ class TrackPackagesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.pink[50],
+      color: AppColors.appOrange.withOpacity(0.2),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16.r),
       ),
@@ -20,6 +21,7 @@ class TrackPackagesCard extends StatelessWidget {
             Text(
               'Track Packages 📦',
               style: TextStyle(
+                color: Color(0xFFB084FF),
                 fontSize: 18.sp,
                 fontWeight: FontWeight.bold,
               ),
@@ -46,7 +48,7 @@ class TrackPackagesCard extends StatelessWidget {
                 suffixIcon: Padding(
                   padding: EdgeInsets.all(8.0),
                   child: IconButton(
-                    icon: Icon(Icons.search, color: Colors.orange),
+                    icon: Icon(Icons.search, color: AppColors.appOrange),
                     onPressed: () {},
                   ),
                 ),

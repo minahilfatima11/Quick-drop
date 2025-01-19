@@ -59,22 +59,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
     // Check if the email matches the regex and that the entire string is valid
     return emailRegExp.hasMatch(email);
   }
-
   Country selectedCountry = Country(
-    phoneCode: "91",
-    countryCode: "IN",
+    phoneCode: "92", // Pakistan ka phone code
+    countryCode: "PK", // Pakistan ka country code
     e164Sc: 0,
     geographic: true,
     level: 1,
-    name: "India",
-    example: "India",
-    displayName: "India",
-    displayNameNoCountryCode: "IN",
+    name: "Pakistan", // Country name
+    example: "Pakistan", // Example name
+    displayName: "Pakistan", // Display name
+    displayNameNoCountryCode: "PK", // Display name without country code
     e164Key: "",
   );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Form(
           key: formKey,
@@ -287,21 +288,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Text("Female"),
                           ],
                         ),
-                        Row(
-                          children: [
-                            Radio<String>(
-                              activeColor: AppColors.appOrange.withOpacity(0.7),
-                              value: "Not Disclosed",
-                              groupValue: "Not Disclosed",
-                              onChanged: (String? value) {
-                                setState(() {
-                                  _selectedGender = value;
-                                });
-                              },
-                            ),
-                            Text("Not Disclosed")
-                          ],
-                        ),
+
                       ],
                     ),
                   ),
@@ -314,6 +301,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       "Driving License"
                     ],
                     hint: "ID Type",
+
                     prefixIcon: Icons.perm_identity,
                     suffixIcon: Icons.arrow_drop_down,
                     onChanged: (value) {
