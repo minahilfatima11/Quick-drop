@@ -86,10 +86,10 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(right: 8.w),
-                      child: Image.asset(
+                   /*   child: Image.asset(
                         'assets/images/forgetArt.png',
                         height: 40.h,
-                      ),
+                      ),*/
                     ),
                     // Text
                     Column(
@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     SizedBox(
-                      width: 30.w,
+                      width: 80.w,
                     ),
 
                     CustombuttonWidget(
