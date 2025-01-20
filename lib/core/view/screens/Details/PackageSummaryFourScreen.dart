@@ -74,7 +74,7 @@ class _PackagesummaryPageState extends State<PackagesummaryPage> {
                             height: 5.h,
                           ),
                           Container(
-                            height: 320.h,
+                            height: 350.h,
                             decoration: BoxDecoration(
                               border:
                                   Border.all(color: Colors.black, width: 0.5),

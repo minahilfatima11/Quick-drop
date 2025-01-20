@@ -49,7 +49,7 @@ class _ProductDetailsSectionState extends State<ProductDetailsSection> {
           children: [
             Text(
               widget.productName,
-              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold , color: AppColors.appOrange),
+              style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold , color: AppColors.appOrange),
             ),
             SizedBox(height: 8.h),
             Text(

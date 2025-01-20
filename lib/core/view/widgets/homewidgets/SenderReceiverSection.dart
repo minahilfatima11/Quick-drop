@@ -22,11 +22,11 @@ class SenderReceiverSection extends StatelessWidget {
           children: [
             Text(
               'Sender Name',
-              style: TextStyle(fontSize: 14,  color: Colors.grey),
+              style: TextStyle(fontSize: 11,  color: Colors.grey),
             ),
             Text(
               senderName,
-              style:  TextStyle(fontSize: 16, fontWeight: FontWeight.bold , color: AppColors.appOrange),
+              style:  TextStyle(fontSize: 12, fontWeight: FontWeight.bold , color: AppColors.appOrange),
             ),
           ],
         ),
@@ -35,11 +35,11 @@ class SenderReceiverSection extends StatelessWidget {
           children: [
              Text(
               'Receiver Name',
-              style: TextStyle(fontSize: 14, color: Colors.grey),
+              style: TextStyle(fontSize: 11, color: Colors.grey),
             ),
             Text(
               receiverName,
-              style:  TextStyle(fontSize: 16, fontWeight: FontWeight.bold , color: AppColors.appOrange),
+              style:  TextStyle(fontSize: 12, fontWeight: FontWeight.bold , color: AppColors.appOrange),
             ),
           ],
         ),
