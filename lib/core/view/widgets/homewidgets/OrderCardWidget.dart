@@ -42,7 +42,7 @@ class OrderCard extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.r),
           ),
-          elevation: 4,
+          elevation: 0,
           child: Padding(
             padding: EdgeInsets.all(16.r),
             child: Column(
