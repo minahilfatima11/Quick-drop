@@ -5,7 +5,7 @@
 <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:label="Ziplinez"
+        android:label="Quick Drop"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
