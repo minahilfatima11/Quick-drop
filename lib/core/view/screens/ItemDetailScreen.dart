@@ -64,6 +64,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         }
       },
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -75,6 +76,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             Padding(
               padding: const EdgeInsets.all(8),
               child: Container(
+
                 decoration: BoxDecoration(
                   color: AppColors.appOrange,
                   borderRadius: BorderRadius.circular(10),
@@ -195,7 +197,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                       (widget.order!["order_status"] == "delivered" ||
                               widget.order!["order_status"] == "completed")
                           ? TitlesWdgt(
-                              Title: "Reciver Signature",
+                              Title: "Receiver Signature",
                             )
                           : Container(),
                       _buildDetailsBox([
@@ -233,7 +235,8 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                                                 ),
                                             context: context));
                                   },
-                                  text: "Reciver Signature",
+                                  text: "Receiver Signature",
+
                                 ),
                               ],
                             )
@@ -252,15 +255,9 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   Widget _buildDetailsBox(List<Widget> widgets) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.appOrange.withOpacity(0.3),
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade300,
-            offset: Offset(0, 3),
-            blurRadius: 5,
-          ),
-        ],
+
       ),
       child: Column(
         children: widgets,

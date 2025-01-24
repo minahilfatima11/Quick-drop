@@ -73,6 +73,7 @@ class _PickupPendingItemsScreenState extends State<PickupPendingItemsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: BlocConsumer<OrderBloc, OrderState>(
         listener: (context, state) {
           if (state is OrderLoaded) {

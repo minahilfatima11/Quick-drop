@@ -58,141 +58,143 @@ class _SenderDetailsPageState extends State<SenderDetailsPage> {
         }
       },
       builder: (context, state) {
-        return Padding(
-          padding: EdgeInsets.all(8.r),
-          child: Container(
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Sender Details",
-                  style:
-                      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w900),
-                ),
-                Text(
-                  "Please enter the details below",
-                ),
-                StepperScreenTextField(
-                    controller: senderNameController,
-                    hint: "Enter your name",
-                    image: 'assets/images/userIcon.png'),
-                SizedBox(
-                  height: 8.h,
-                ),
-                StepperScreenTextField(
-                  inputFormatters: [
-                    FilteringTextInputFormatter
-                        .digitsOnly, // Allows only digits
-                    LengthLimitingTextInputFormatter(10),
-                  ], // Limits input to 10 digits
-                  keyboardType: TextInputType.number,
-                  hint: ' Phone Number',
-                  image: null,
-                  controller: mobileNoController,
-                  prefixIcon: Container(
-                    padding: EdgeInsets.all(8.0),
-                    child: InkWell(
-                      onTap: () {
-                        showCountryPicker(
-                            useSafeArea: true,
-                            context: context,
-                            countryListTheme: CountryListThemeData(
-                                flagSize: 20,
-                                borderRadius: BorderRadius.circular(10)),
-                            onSelect: (value) {
-                              setState(() {
-                                selectedCountry = value;
+        return SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(8.r),
+            child: Container(
+              height: MediaQuery.of(context).size.height,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Sender Details",
+                    style:
+                        TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w900),
+                  ),
+                  Text(
+                    "Please enter the details below",
+                  ),
+                  StepperScreenTextField(
+                      controller: senderNameController,
+                      hint: "Enter your name",
+                      image: 'assets/images/userIcon.png'),
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  StepperScreenTextField(
+                    inputFormatters: [
+                      FilteringTextInputFormatter
+                          .digitsOnly, // Allows only digits
+                      LengthLimitingTextInputFormatter(10),
+                    ], // Limits input to 10 digits
+                    keyboardType: TextInputType.number,
+                    hint: ' Phone Number',
+                    image: null,
+                    controller: mobileNoController,
+                    prefixIcon: Container(
+                      padding: EdgeInsets.all(8.0),
+                      child: InkWell(
+                        onTap: () {
+                          showCountryPicker(
+                              useSafeArea: true,
+                              context: context,
+                              countryListTheme: CountryListThemeData(
+                                  flagSize: 20,
+                                  borderRadius: BorderRadius.circular(10)),
+                              onSelect: (value) {
+                                setState(() {
+                                  selectedCountry = value;
+                                });
                               });
-                            });
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          "${selectedCountry.flagEmoji} + ${selectedCountry.phoneCode}",
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.grey,
-                            fontWeight: FontWeight.bold,
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            "${selectedCountry.flagEmoji} + ${selectedCountry.phoneCode}",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 8.h,
-                ),
-                StepperScreenTextField(
-                  controller: emailController,
-                  keyboardType: TextInputType.emailAddress,
-                  inputFormatters: [
-                    FilteringTextInputFormatter.allow(
-                        RegExp(r'[a-zA-Z0-9@._-]')),
-                  ],
-                  hint: "Enter Email Address",
-                  image: 'assets/images/emailIcon.png',
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(
-                    "Sender address",
+                  SizedBox(
+                    height: 8.h,
                   ),
-                ),
-                StepperScreenTextField(
-                    controller: addressController,
-                    hint: "Street/Building",
-                    image: 'assets/images/pointIcon.png'),
-                SizedBox(
-                  height: 18.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    (state is OrderPlaceLoadingState)
-                        ? Center(child: CircularProgressIndicator())
-                        : CustombuttonWidget(
-                            buttonWidth: 200.w,
-                            buttonHeight: 40.h,
-                            buttonBackgroundColor: AppColors.appOrange,
-                            onPressed: () async {
-                              if (senderNameController.text.isEmpty ||
-                                  emailController.text.isEmpty ||
-                                  mobileNoController.text.isEmpty ||
-                                  addressController.text.isEmpty) {
-                                showAlertDialog(
-                                  context,
-                                  "Incomplete Details",
-                                  "Please fill in all the required fields.",
-                                );
-                              } else if (!validateEmail(emailController.text)) {
-                                showAlertDialog(
-                                  context,
-                                  "Invalid Email",
-                                  "Please enter a valid email address.",
-                                );
-                              } else {
-                                var orderId =
-                                    await SharedPrefService.getOrderId();
-
-                                Map<String, dynamic> sender = {
-                                  "order_id": orderId,
-                                  "sender_name": senderNameController.text,
-                                  "sender_email": emailController.text,
-                                  "sender_mobile": mobileNoController.text,
-                                  "sender_address": addressController.text
-                                };
-                                log("${sender}");
-                                context
-                                    .read<OrderPlaceBloc>()
-                                    .add(SenderDetailEvent(sender: sender));
-                              }
-                            },
-                            text: "Submit",
-                          ),
-                  ],
-                ),
-              ],
+                  StepperScreenTextField(
+                    controller: emailController,
+                    keyboardType: TextInputType.emailAddress,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.allow(
+                          RegExp(r'[a-zA-Z0-9@._-]')),
+                    ],
+                    hint: "Enter Email Address",
+                    image: 'assets/images/emailIcon.png',
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      "Sender address",
+                    ),
+                  ),
+                  StepperScreenTextField(
+                      controller: addressController,
+                      hint: "Street/Building",
+                      image: 'assets/images/pointIcon.png'),
+                  SizedBox(
+                    height: 18.h,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      (state is OrderPlaceLoadingState)
+                          ? Center(child: CircularProgressIndicator())
+                          : CustombuttonWidget(
+                              buttonWidth: 200.w,
+                              buttonHeight: 40.h,
+                              buttonBackgroundColor: AppColors.appOrange,
+                              onPressed: () async {
+                                if (senderNameController.text.isEmpty ||
+                                    emailController.text.isEmpty ||
+                                    mobileNoController.text.isEmpty ||
+                                    addressController.text.isEmpty) {
+                                  showAlertDialog(
+                                    context,
+                                    "Incomplete Details",
+                                    "Please fill in all the required fields.",
+                                  );
+                                } else if (!validateEmail(emailController.text)) {
+                                  showAlertDialog(
+                                    context,
+                                    "Invalid Email",
+                                    "Please enter a valid email address.",
+                                  );
+                                } else {
+                                  var orderId =
+                                      await SharedPrefService.getOrderId();
+          
+                                  Map<String, dynamic> sender = {
+                                    "order_id": orderId,
+                                    "sender_name": senderNameController.text,
+                                    "sender_email": emailController.text,
+                                    "sender_mobile": mobileNoController.text,
+                                    "sender_address": addressController.text
+                                  };
+                                  log("${sender}");
+                                  context
+                                      .read<OrderPlaceBloc>()
+                                      .add(SenderDetailEvent(sender: sender));
+                                }
+                              },
+                              text: "Submit",
+                            ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         );

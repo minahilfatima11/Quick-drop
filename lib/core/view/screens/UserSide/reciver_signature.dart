@@ -26,8 +26,8 @@ class Reciversignaturescreen extends StatefulWidget {
 class _ReciversignaturescreenState extends State<Reciversignaturescreen> {
   SignatureController controller = SignatureController(
     penStrokeWidth: 3,
-    penColor: AppColors.appBlack,
-    exportBackgroundColor: Colors.cyan,
+    penColor: AppColors.appOrange,
+    exportBackgroundColor: AppColors.appOrange.withOpacity(0.2),
   );
 
   Future<void> _saveSignature() async {
@@ -53,6 +53,7 @@ class _ReciversignaturescreenState extends State<Reciversignaturescreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -66,7 +67,7 @@ class _ReciversignaturescreenState extends State<Reciversignaturescreen> {
           ),
         ),
         title: Text(
-          "Reciver Signature",
+          "Receiver Signature",
           style: TextStyle(color: Colors.black, fontSize: 18.sp),
         ),
       ),
@@ -107,12 +108,12 @@ class _ReciversignaturescreenState extends State<Reciversignaturescreen> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       border:
-                          Border.all(color: AppColors.appBlack, width: 1.5.w)),
+                          Border.all(color: AppColors.appOrange, width: 1.5.w)),
                   child: Signature(
                     controller: controller,
                     width: 333.w,
                     height: 400.h,
-                    backgroundColor: AppColors.appWhite,
+                    backgroundColor: AppColors.appOrange.withOpacity(0.2),
                   ),
                 ),
                 SizedBox(

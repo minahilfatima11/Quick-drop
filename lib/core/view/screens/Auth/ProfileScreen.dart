@@ -104,9 +104,11 @@ class _ProfileScreenState extends State<ProfileScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Profile"),
         centerTitle: true,
+        backgroundColor: Colors.white,
       ),
       body: BlocListener<ProfileBloc, ProfileState>(
         listener: (context, state) {
@@ -140,20 +142,9 @@ class _ProfileScreenState extends State<ProfileScreen>
                           ),
                         ),
                         child: CircleAvatar(
-                          backgroundImage: profileData != null &&
-                                  profileData!["profile_picture_url"] != null
-                              ? NetworkImage(
-                                  profileData!["profile_picture_url"])
-                              : null,
-                          child: profileData == null ||
-                                  profileData!["profile_picture_url"] == null
-                              ? Icon(
-                                  Icons.person,
-                                  size: 60.w,
-                                  color: Colors.grey.shade600,
-                                )
-                              : null,
-                        ),
+                          backgroundImage: AssetImage("assets/images/profile.jpg"),
+                          // You can remove this line if you don't want to show an icon
+                        )
                       ),
                     );
                   },

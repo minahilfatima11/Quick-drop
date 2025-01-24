@@ -33,6 +33,7 @@ class _TabMainScreenState extends State<TabMainScreen> {
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
+      backgroundColor: Colors.white,
       key: _scaffoldKey,
       body: SafeArea(
         child: Column(

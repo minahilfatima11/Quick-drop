@@ -25,7 +25,7 @@ class ProfileEnableTextField extends StatelessWidget {
       controller: controller,
       readOnly: isReadable ?? false,
       decoration: InputDecoration(
-        labelStyle: TextStyle(color: Colors.red),
+        labelStyle: TextStyle(color: AppColors.appOrange),
         hintText: hint,
         hintStyle: TextStyle(color: Colors.grey),
         prefixIcon: Image.asset(image,
@@ -33,11 +33,11 @@ class ProfileEnableTextField extends StatelessWidget {
         suffixIcon: icon,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.redAccent.withOpacity(0.2)),
+          borderSide: BorderSide(color: AppColors.appOrange.withOpacity(0.3)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.red.withOpacity(0.2)),
+          borderSide: BorderSide(color: AppColors.appOrange.withOpacity(0.3)),
         ),
       ),
       obscureText: false,

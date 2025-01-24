@@ -1,4 +1,4 @@
-name: zipline_project
+name: quick_drop
 description: "A new Flutter project."
 publish_to: "none"
 
@@ -45,3 +45,4 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/profile.jpg

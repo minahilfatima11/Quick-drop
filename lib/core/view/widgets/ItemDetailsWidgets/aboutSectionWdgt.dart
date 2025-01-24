@@ -22,13 +22,13 @@ class AboutSecWdgt extends StatelessWidget {
             child: Text(
               title,
               style: TextStyle(
-                  fontSize: 14.sp, color: AppColors.appBlack.withOpacity(0.5)),
+                  fontSize: 14.sp, color: AppColors.appOrange.withOpacity(0.7)),
             ),
           ),
           Expanded(
             child: Text(
               titleValue,
-              style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold, color: AppColors.appOrange.withOpacity(0.7)),
             ),
           ),
         ],

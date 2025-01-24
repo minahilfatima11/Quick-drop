@@ -70,6 +70,7 @@ class _DeliveredItemsScreenState extends State<DeliveredItemsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: BlocConsumer<OrderBloc, OrderState>(
         listener: (context, state) {
           if (state is OrderLoaded) {

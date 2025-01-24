@@ -13,7 +13,7 @@ class TitlesWdgt extends StatelessWidget {
     return Text(
       Title,
       style: TextStyle(
-          color: AppColors.appBlack,
+          color: AppColors.appOrange,
           fontSize: 16.sp,
           fontWeight: FontWeight.w800),
     );
